@@ -1,0 +1,3 @@
+#!/usr/bin/fish
+cp $HOME/Pictures/$argv[1] $HOME/Pictures/.current_wallpaper.png
+i3-msg restart

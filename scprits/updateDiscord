@@ -1,0 +1,11 @@
+#!/bin/env bash
+
+cd /tmp
+sudo rm -rf /bin/discord /bin/Discord /usr/share/discord
+sudo pacman -S tar curl
+curl "https://discord.com/api/download?platform=linux&format=tar.gz" -L --output - > discord.tar.gz
+tar -xvf discord.tar.gz
+sudo mv Discord/discord.desktop /usr/share/applications
+sudo mv Discord /usr/share/discord
+sudo ln -s /usr/share/discord/Discord /bin/discord
+rm -rf discord.tar.gz
